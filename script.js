@@ -44,4 +44,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+// write function called game 
+// use prev ious function inside of this one to play a 5 round game
+// that keeps score and reports a winner or loser at the end
+function game() {
+    // get player choice
+    let playerSelection = prompt("Choose rock, paper or scissors: ");
+    // get computer choice 
+    let computerSelection = getComputerChoice();
+    // get results 
+    let results = playRound(playerSelection, computerSelection);
 
+    console.log(`You chose: ${playerSelection}`);
+    console.log(`Computer chose: ${computerSelection}`);
+    return results;
+}
+
+console.log(game());
