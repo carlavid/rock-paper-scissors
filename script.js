@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
@@ -6,40 +9,53 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    let results = "";
     // tie 
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        playerScore += 1;
+        computerScore +=1;
+        results = "It's a tie!";
     // playerSelection
     } else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            return "You Win! Rock beats Scissors";
+            playerScore += 1;
+            results = "You Win! Rock beats Scissors";
         } else if (computerSelection === "paper") {
-            return "You Lose! Paper beats Rock";
+            computerScore += 1;
+            results = "You Lose! Paper beats Rock";
         }
     // playerSelection = paper
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return "You Win! Paper beats Rock";
+            playerScore += 1;
+            results = "You Win! Paper beats Rock";
         } else if (computerSelection === "scissors") {
-            return "You Lose! Scissors beats Paper";
+            computerScore += 1;
+            results = "You Lose! Scissors beats Paper";
         }
     // playerSelection = scissors
     } else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            return "You Win! Scissors beats Paper";
+            playerScore += 1;
+            results = "You Win! Scissors beats Paper";
         } else if (computerSelection === "rock") {
-            return "You Lose! Rock beats Scissors"
+            computerScore += 1;
+            results =  "You Lose! Rock beats Scissors"
         }
     }
-}
+    return `<p><strong>${results}</strong></p>
+    <br>Player Score: <strong>${playerScore}</strong>
+    <br>Computer Score: <strong>${computerScore}</strong>`;
+};
+
+
 
 function game() {
     let computerSelection = getComputerChoice();
-    let results = playRound(playerSelection, computerSelection);
+    let finalResults = playRound(playerSelection, computerSelection);
     
-    return `<p>You chose: <strong>${playerSelection}</strong>
-    <br>Computer chose: <strong>${computerSelection}</strong>
-    <br><strong>${results}</strong></p>`;
+    // return finalResults;
+    return finalResults;
     
 }
 
@@ -57,14 +73,13 @@ paperButton.addEventListener("click", function() {
     document.getElementById("div1").innerHTML = game();
 })
 
-
 const scissorsButton = document.querySelector(".scissors");
 scissorsButton.addEventListener("click", function() {
     playerSelection = "scissors";
     document.getElementById("div1").innerHTML = game();
 })
 
-// disable buttons after 5 clicks;
+// disable buttons after 5 rounds;
 const buttons = document.querySelectorAll("button");
 let clickCount = 0;
 const maxClicks = 5;
@@ -76,7 +91,7 @@ function clickHandler() {
         buttons.forEach(button => {
             button.disabled = true;
         });
-        document.getElementById("div1").innerHTML = "5 clicks! Game Over!"
+        document.getElementById("div1").innerHTML = "Game Over! Reload to play again!"
     }
 }
 rockButton.addEventListener("click", clickHandler);
