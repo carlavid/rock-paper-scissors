@@ -1,16 +1,9 @@
-// rock paper scissors Game 
-// begin with a function called getComputerChoice
-// that will randomly return rock, paper or scissors
-
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
     return choices[Math.floor(Math.random() * choices.length)];
 
 }
 
-// write function that plays a single round of rps
-// two parameters - playerSelection & computerSelection 
-// return string that declares winner of the round "You Lose! Paper beats Rock"
 function playRound(playerSelection, computerSelection) {
     // make function's parameter case-insensitive 
     playerSelection = playerSelection.toLowerCase();
@@ -43,21 +36,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-// write function called game 
-// use prev ious function inside of this one to play a 5 round game
-// that keeps score and reports a winner or loser at the end
 function game() {
-    // get player choice
-    let playerSelection = prompt("Choose rock, paper or scissors: ");
-    // get computer choice 
     let computerSelection = getComputerChoice();
-    // get results 
     let results = playRound(playerSelection, computerSelection);
-
-    console.log(`You chose: ${playerSelection}`);
-    console.log(`Computer chose: ${computerSelection}`);
-    return results;
+    
+    return `<p>You chose: <strong>${playerSelection}</strong>
+    <br>Computer chose: <strong>${computerSelection}</strong>
+    <br><strong>${results}</strong></p>`;
+    // return `You chose ${playerSelection}`;
 }
 
-console.log(game());
+const rockButton = document.querySelector(".rock");
+rockButton.addEventListener("click", function() {
+    playerSelection = "rock";
+    document.getElementById("div1").innerHTML = game();
+})
+
+
+const paperButton = document.querySelector(".paper");
+paperButton.addEventListener("click", function() {
+    playerSelection = "paper";
+    document.getElementById("div1").innerHTML = game();
+})
+
+
+const scissorsButton = document.querySelector(".scissors");
+scissorsButton.addEventListener("click", function() {
+    playerSelection = "scissors";
+    document.getElementById("div1").innerHTML = game();
+})
+
