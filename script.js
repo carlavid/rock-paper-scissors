@@ -1,3 +1,4 @@
+
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"]
     return choices[Math.floor(Math.random() * choices.length)];
@@ -5,10 +6,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    // make function's parameter case-insensitive 
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
-
     // tie 
     if (playerSelection === computerSelection) {
         return "It's a tie!";
@@ -43,8 +40,9 @@ function game() {
     return `<p>You chose: <strong>${playerSelection}</strong>
     <br>Computer chose: <strong>${computerSelection}</strong>
     <br><strong>${results}</strong></p>`;
-    // return `You chose ${playerSelection}`;
+    
 }
+
 
 const rockButton = document.querySelector(".rock");
 rockButton.addEventListener("click", function() {
@@ -65,4 +63,23 @@ scissorsButton.addEventListener("click", function() {
     playerSelection = "scissors";
     document.getElementById("div1").innerHTML = game();
 })
+
+// disable buttons after 5 clicks;
+const buttons = document.querySelectorAll("button");
+let clickCount = 0;
+const maxClicks = 5;
+
+function clickHandler() {
+    clickCount++;
+
+    if (clickCount > maxClicks) {
+        buttons.forEach(button => {
+            button.disabled = true;
+        });
+        document.getElementById("div1").innerHTML = "5 clicks! Game Over!"
+    }
+}
+rockButton.addEventListener("click", clickHandler);
+paperButton.addEventListener("click", clickHandler);
+scissorsButton.addEventListener("click", clickHandler);
 
