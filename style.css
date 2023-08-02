@@ -1,11 +1,64 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 body, button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Bungee", Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: rgb(239, 235, 235);
 }
 
-button {
-    background-color: rgb(65, 166, 209);
-    color: white;
+.heading {
+    font-family: "Bungee Shade", Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 50px;
+    color: black;
+    margin: 0px;
     padding: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
+}
+
+.sub-heading {
+    font-size: 20px;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(101, 97, 97, 0.4);
+    border: 4px solid black;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 40%;
+}
+
+
+.button {
+    text-decoration: none;
+    background-color: rgb(208, 165, 241);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+#score-num {
+    font-size: 20px;
+    color: rgb(149, 98, 187);
+}
+
+.final-winner {
+    font-size: 20px;
+    color: rgb(149, 98, 187);
 }
