@@ -51,8 +51,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
     roundResults.innerHTML = `<p><strong>${results}</strong></p>`;
-    playerScore_span.innerHTML = `Player Score: <strong>${playerScore}</strong> `;
-    computerScore_span.innerHTML = `Computer Score: <strong>${computerScore}</strong>`;
+    playerScore_span.innerHTML = `Player Score: <span id="score-num">${playerScore}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;
+    computerScore_span.innerHTML = `Computer Score: <span id="score-num">${computerScore}</span>`;
     return roundResults.innerHTML + playerScore_span.innerHTML + computerScore_span.innerHTML;
 };
 
