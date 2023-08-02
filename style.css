@@ -55,6 +55,7 @@ body, button {
 
 #score-num {
     font-size: 20px;
+    font-weight: bold;
     color: rgb(149, 98, 187);
 }
 
