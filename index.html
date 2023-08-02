@@ -6,11 +6,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1 class="heading">Rock Paper Scissors!</h1>
-        <button class="rock" id="rock" value="rock">Rock</button>
-        <button class="paper" id="paper" value="paper">Paper</button>
-        <button class="scissors" id="scissors" value="scissors">Scissors</button>
+        <header>
+            <h1 class="heading">Rock Paper Scissors!</h1>
+        </header>
+        <p class="sub-heading">First to 5 Wins!</p>
+        <div class="main-div">
+            <div class="button-section">
+                <button class="button" id="rock">Rock</button>
+                <button class="button" id="paper">Paper</button>
+                <button class="button" id="scissors">Scissors</button>
+            </div>
+            <div class="div1" id="div1"> 
+                <p id="results"></p>
+                <span class="scores" id="player-score">Player Score: <span id="score-num">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="scores" id="computer-score">Computer Score: <span id="score-num">0</span></span>
+            </div>
+        </div>
+        <div id="final-winner-results">
+            <p class="final-winner" id="final-winner"></p>
+        </div>
         <script src="script.js"></script>
-        <div class="div1" id="div1"></div>
     </body>
 </html>
