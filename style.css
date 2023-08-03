@@ -5,13 +5,13 @@ body {
     justify-content: center;
 }
 body, button {
-    font-family: "Bungee", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Bungee", cursive;
     text-align: center;
     background-color: rgb(239, 235, 235);
 }
 
 .heading {
-    font-family: "Bungee Shade", Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: "Bungee Shade", cursive; 
     font-size: 50px;
     color: black;
     margin: 0px;
